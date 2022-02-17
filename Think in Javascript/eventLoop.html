@@ -1,0 +1,6 @@
+<p>
+	In a browser js engine there are two parts actually.Those are heap and call stack.
+	Heap simply used for memory management where memory allocation happens for our code.
+	Call Stack in last in first out(LIFO) .For example ,A js file have several function.Call stack will insert every function synchronously one by one and executes.if a asynchronous function like setTimeout(),setInterval() comes suddenly it takes these funtions to a separate portion call web api.Then it pushes the asynchronous funtion to a callback queue which works like first in first out process.when all the call stack is done and stack is free it takes instructions from callback queue and sets to callstack through event loop.
+	So ultimately event loop is simply a process to cooperate with call stack with callback queue.
+</p>

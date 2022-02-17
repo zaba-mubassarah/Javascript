@@ -1,0 +1,47 @@
+<script type="text/javascript">
+	
+	//If we want to go through in every element of an array and want to do some operation in every element then we use map which actually returns another array with that specified operation and also doesn't changes the main array .
+	var newArr = [1,2,3,4];
+	var result = newArr.map(res=>res*2);
+	console.log(result);//output [2,4,6,8]
+	console.log(newArr);//output [1,2,3,4]
+
+	//getting specific object from an array of object and push to another array
+
+	var objArr = [
+	  {
+	  	id:1,
+	  	name:'shanita',
+	  	age:'27',
+	  	marital_status:'married',
+	  	division:'mymensingh'
+	  },
+	   {
+	  	id:2,
+	  	name:'tania',
+	  	age:'27',
+	  	marital_status:'married',
+	  	division:'mymensingh'
+	  },
+	   {
+	  	id:3,
+	  	name:'chompa',
+	  	age:'27',
+	  	marital_status:'unmarried',
+	  	division:'mymensingh'
+	  },
+	   {
+	  	id:4,
+	  	name:'mitu',
+	  	age:'27',
+	  	marital_status:'unmarried',
+	  	division:'mymensingh'
+	  },
+
+	];
+	var objArrResult = objArr.map(({id,name,marital_status})=>{
+      return {user_id:id,user_name:name,status:marital_status,new_Add:'friends'}
+	});
+	console.log(objArr);
+	console.log(objArrResult);
+</script>

@@ -1,0 +1,59 @@
+<script>
+	//Normal Function
+    function myFunc(){
+    	console.log('shanita');
+    }
+    myFunc();//no need to console.log as when it calls the function it gets a console.log.
+    // arrow function
+    var arrowFunc = ()=>{
+    	return 10;
+    }
+    console.log(arrowFunc());
+    //simplify Arrow
+    console.log('If we have to return only one thing like then we can simply write without the curly braces even without the return keyword.For return if we omit the braces return keyword also need to remove.But in case of console.log if we want to take the wholw function in one line there only can remove the first curly braces');
+     var arrowFunc2 = ()=> 20;
+     console.log(arrowFunc2());
+
+     //with parameter
+      var arrowFunc3 = (n)=> n;
+      console.log(arrowFunc3(200));
+
+     //Self this issues
+
+       var mouri = {
+    	myName:'mou',
+    	age:28,
+    	language:['a','b','c'],
+    	printLanguage: function (){
+    		var self = this;
+    		this.language.forEach(function(a){
+	      	console.log(`${this.myName} loves ${a}`);
+	      	//not gonna print the name.But If we had used here arrow fuction this problem is not gonna happen.Next example is the differecne.
+
+
+	      	console.log(`${self.myName} loves ${a}`);
+	      });
+    		
+    	},
+    	
+    }
+    mouri.printLanguage();
+
+     var shanita = {
+    	myName2:'tadaa',
+    	age:28,
+    	language:['a','b','c'],
+    	printLanguage: function (){
+    		
+    		this.language.forEach((a)=>{
+	      	console.log(`${this.myName2} loves ${a}`);
+	       //arrow funtion simply don't deal with self.
+	      });
+    		
+    	},
+    	
+    }
+    shanita.printLanguage();
+     
+</script>
+

@@ -1,0 +1,58 @@
+<script >
+	for (var i = 0;i<=5;i++){
+		console.log(i)
+	}//output 0 1 2 3 4 5
+
+	console.log(i);//output will be 6 as for loop globally changes the value of i but when it doesn't specify the condition inner console of for loop stops but outer i is changed
+
+
+	//For in
+	//Example(object for in)
+	var infoObj = {
+		name:'shanita',
+		age:27,
+		division:'dhaka'
+	}
+	console.log('in in object');
+	for(property in infoObj){
+		console.log(property);//returns the property(name,age,division) not the value of the property('shanita',27,'dhaka')
+	}
+
+	//Example(array for in)
+	var inArr = [1,2,3,4];
+	console.log('in in array');
+	for(element in inArr){
+		console.log(element);//output is the index of every element 0 1 2 3
+	}
+
+	//Example(string for in)
+	var inStr = 'I love javascript';
+	console.log('in in string');
+	for(str in inStr){
+		console.log(str);//as like array for in method returns the index of every element of the string
+	}
+
+	//For of
+	//Example(object for of)
+	var infoObj1 = {
+		name:'shanita',
+		age:27,
+		division:'dhaka'
+	}
+	console.log('for of for  object');
+	console.log('object can not operate for of')
+
+	//Example(array for of)
+	var inArr1 = [1,2,3,4];
+	console.log('forof of array');
+	for(element of inArr1){
+		console.log(element);//output is the  element of array  1 2 3 4
+	}
+
+	//Example(string for in)
+	var inStr1 = 'I love javascript';
+	console.log('forof of string');
+	for(str of inStr1){
+		console.log(str);//as like array for of method returns element of array
+	}
+</script>

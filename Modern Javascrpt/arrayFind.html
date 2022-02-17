@@ -1,0 +1,12 @@
+<script>
+	//array find method finds the first value under specific condition from an array and returns the value.It only returns a single value and doesn't manupulate the original array.Find always breaks the loop when it finds the first conditional value.
+
+	var myArr = [1,2,3,4,5,6];
+	var result = myArr.find(function(res){
+      return res>2;
+	});
+	console.log(result);
+	var result2 = myArr.find(res=>res>4);
+	
+	console.log(result2);
+</script>

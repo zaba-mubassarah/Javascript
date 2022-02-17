@@ -1,0 +1,51 @@
+<script>	
+	// callback
+
+ // const dressOrder = (dress,callback) =>{
+ // 	console.log(`${dress} has been orderd`);
+ // 	callback(dress);
+ // }
+ // const receivedDress = (dress,callback)=>{
+ // 	console.log(`${dress} received`);
+ // 	callback('shanita');
+ // }
+ // const getReady = (name)=>{
+ // 	console.log(`get ready ${name}`);
+ // 	setTimeout(()=>{
+ 		
+ // 		console.log(`yes  ${name} is ready`);
+ // 	},3000)
+   
+ // }
+ // dressOrder('shari',(param)=>{
+ // 	receivedDress(param,(name)=>{
+ //      getReady(name);
+ // 	})
+ // })
+
+//promise
+const meetingData = false;
+const myPromise = new Promise((resolve,reject)=>{
+  if(!meetingData){
+  	const meetingDetails = {
+  		time:'4 pm',
+  		with:'Mitu'
+  	}
+  	resolve(meetingDetails);
+  }
+  else{
+  	reject(new Error('meeting already have'))
+  }
+})
+
+myPromise.then((res)=>{
+	console.log(JSON.stringify(res));
+})
+.catch((err)=>{
+	console.log(err.message);
+})
+
+
+
+
+</script>

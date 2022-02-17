@@ -1,0 +1,10 @@
+<script>
+	var myArr = [1,2,3,4,5,6];
+	var result = myArr.filter(function(res){
+      return res>2;
+	});
+	console.log(result);
+	console.log(myArr);//Doesn't change its original value.
+
+	//returns an array with all element whose are greater then 2.It doesn't breaks the loop after one element  matchs the condition but goes through in all value and filters the matched value in an array
+</script>

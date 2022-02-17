@@ -1,0 +1,63 @@
+<script type="text/javascript">
+
+	console.log(a);
+	var a = '10';
+
+	// Result:undefined 
+
+	//only var variable takes places initially for all var ..Initially it takes a memory or placeholder named 'undefined'.After that it it takes the assigned value.but if there is no value assigned it remains 'undefined'.if assigned value is before any action like console or something like that it will return the value.otherwise it will returned the initial allocated memory placeholder which is undefined
+
+	var LANGUAGE = 'Java';
+	var language = 'Javascript';
+	function getLanguage (){
+		if(!language){
+			var language = LANGUAGE;
+		}
+		return language;
+	};
+	console.log(`I love ${getLanguage()}`);
+
+	//Expected Result = I love Javascript;
+	//Output =  I love Java;
+	//Beacuse Let comes all above of its world because of hoisting..When function gets a var keyword it assigns that variable in the top of the function even before the if condition(block scope).But if we use it in let the expected result will come.detail below.
+	//https://www.youtube.com/watch?v=pT9xqCS8Vwk&list=PLHiZ4m8vCp9Nflbo9a0pZuLscG_Xc7DKq&index=5	
+
+	myFunc();
+	function myFunc(){
+		console.log('iiiii');
+	}
+	//always function defination comes all above 
+    var y = 20;
+	function func2(){
+		var x = 10;
+		return function(){
+				y =  x;
+		}
+	};
+	console.log(y);
+	func2();
+	console.dir(func2());
+
+
+	function bankAcc(param){
+		var balance = param;
+		return function(){
+			return balance;
+		}
+
+	}
+	var myRet = bankAcc(444);
+	console.dir(myRet);
+
+	function greeting() {
+    let message = 'Hi';
+
+    function sayHi() {
+        console.log(message);
+    }
+
+    sayHi();
+}
+
+greeting();
+</script>

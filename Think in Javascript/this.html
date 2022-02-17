@@ -1,0 +1,94 @@
+<script>
+	// Implicit Binding
+    //Example 1
+	var shanita = {
+		name:'zeba',
+		age:27,
+		printMyName: function (){
+		  console.log(this.name)
+		}
+	}
+	shanita.printMyName();
+    //Example 2 
+    var tania = {
+		name:'tantu',
+		age:28,
+		printMyName: function (){
+		  console.log(this.name)
+		},
+		objInsideObj:{
+			name:'obj',
+			objFunc:function(){
+				console.log(this.name);
+			}
+		}
+	}
+	tania.objInsideObj.objFunc();//See in which line function is called and see if there is dot in left.the keyword beforre dot denotes the this for implicit binding.
+
+    //Example 3 .If we want to access higher this.
+    var mouri = {
+    	myName:'mou',
+    	age:28,
+    	language:['a','b','c'],
+    	printLanguage: function (){
+    		var self = this;
+    		this.language.forEach(function(a){
+	      	console.log(`${this.myName} loves ${a}`);//not gonna print the name.
+	      	console.log(`${self.myName} loves ${a}`);
+	      });
+
+    	},
+
+    }
+    mouri.printLanguage();
+
+	//Explicit Binding call
+
+    var sakib = {
+    	name:'sakib',
+    	age:27
+    }
+    var explicitCall = function (v1,v2){
+    	console.log(`${this.name} ${v1} ${v2}`);
+    }
+    v1= 'ddd';
+    v2='sdsd';
+    explicitCall.call(sakib,v1,v2);
+    
+    // Explicit Binding apply.apply takes 1st parameter as obj and denotes as this,2nd paramenter as an array and takes one by one.
+    var tamim = {
+    	name22:'tamim',
+    	age:28
+    }
+    var explicitCall2 = function (){
+    	console.log(`${this.name22} ${v1} ${v2}`);
+    }
+    v1= 'ddddfd';
+    v2='sdsdfdf';
+
+    v = [v1,v2];
+    explicitCall2.apply(tamim,v);
+
+     // Explicit Binding bind returns the instance of a function call
+    var anoy = {
+    	name23:'bind',
+    	age:28
+    }
+    var explicitCall2 = function (){
+    	console.log(`${this.name23} ${v1} ${v2}`);
+    }
+    v1= 'ddddfd';
+    v2='sdsdfdf';
+    v = [v1,v2];
+    var bindMeth = explicitCall2.bind(anoy,v);
+    bindMeth();
+	// New Binding
+	function newBindFunc(name,age){
+		this.name = name;
+		this.age = age;
+		console.log(`${this.name}`);
+	}
+	var contructorVar = new newBindFunc('shanita',28);
+	console.log(contructorVar());
+	// window Binding
+</script>

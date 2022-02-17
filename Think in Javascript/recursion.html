@@ -1,0 +1,13 @@
+<script>
+	//calling a function inside the function.
+	//example
+	function myFunc(n){
+		if(n != 0){
+			return myFunc(n-1) + n;
+		}
+		else{
+			return 0;
+		}
+	}
+	console.log(myFunc(10));
+</script>

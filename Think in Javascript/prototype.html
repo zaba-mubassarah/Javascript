@@ -1,0 +1,132 @@
+<script>
+   // prototype is simply a built in property of javascript objects which inherits
+   // its all property to another
+   // Example 1
+   const personObj = {
+   	 eat(){
+   	 	console.log('person is eating');
+   	 },
+   	 play(){
+   	 	console.log('person is playing');
+   	 },
+   	 dance(){
+   	 	console.log('person is danceing');
+   	 }
+   };
+   function myFunc(name,age){
+     const obj = Object.create(personObj);
+     obj.name = name;
+     obj.age  = age;
+     return obj;
+   };
+   console.log('1');
+   myFunc('shanita',27).play();
+
+
+
+
+
+
+    // Example 2
+   function secondObj(){
+      var obj = Object.create(secondObj.prototype);
+      obj.name = 'shanita';
+      obj.age = 27;
+      return obj;
+   };
+   secondObj.prototype = {
+       eat(name){
+         console.log(`${name} is playing`);
+       },
+       play(){
+         console.log('person is playing');
+       },
+       dance(){
+         console.log('person is danceing');
+       }
+   };
+   console.log('2');
+   secondObj().eat('shanita');
+
+
+
+
+
+
+   // Every javascript function is a constructor function by default.Because,anytime we can construct any object by the function.Constructor function is usually written in camel case.
+
+   // Example 3
+   function ThirdObj(){
+      var obj ={};
+      obj.name = 'shanita';
+      obj.age = 27;
+      return obj;
+   };  
+   const thirdObjConstructor =   ThirdObj();
+   console.log('3');
+   console.log('Example 3:',thirdObjConstructor);
+
+
+
+
+
+
+   //without object.create inherit one object to another object.
+  // Example 4
+   function fourthObjFunc(){
+      // var obj = Object.create(fourthObjFunc.prototype);
+      // no need to specify this line.already has been made by the 'new' keyword.obj 
+      // is replaced by 'this'
+
+      this.name = 'shanita';
+      this.age = 34;
+
+      // return obj? this line also no need.
+   };
+   fourthObjFunc.prototype = {
+      eat(){
+         console.log('she is eating')
+      },
+       play(){
+         console.log('he is palying')
+      },
+   };
+   const tamim =new fourthObjFunc();
+   console.log('4');
+   tamim.play();
+
+
+
+
+
+   // JS Classes:Classes are a template for creating objects.
+   // Example 05:
+   class myClass {
+      constructor(name,age){
+         this.name = 'shanita';
+         this.age = 45;
+      }
+      eat(){
+         console.log('she is eating')
+      }
+       play(){
+         console.log('he is palying')
+      }
+   }
+   const mitu = new myClass();
+   console.log('5');
+   console.log(mitu);
+   mitu.eat();
+
+
+   //why array or object funtionalities works
+   //example 6:
+
+   var personArr = new Array();
+   personArr.push('shanita');
+   console.log('6');
+   console.log('Example 6:',personArr);
+   console.dir(Array);//it will show why we can access all the functionalities like push,shift,pop and all.all are in the prototype.
+   
+
+</script>
