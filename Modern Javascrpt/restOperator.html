@@ -1,0 +1,11 @@
+<p>Synatactically Same as spread parameter but unlike rest parameter it is used in function parameter</p>
+<script type="text/javascript">
+	function myFunc(...param){
+		console.log(param);
+	};
+	function myFunc2(a,...param){
+		console.log(a,param);//param prints rest of one value.always rest operator will be the last value of arguments list.and multiple rest operator can not be passed at a time.
+	};
+	myFunc(2,3,4,5);
+	myFunc2(2,3,4,5);
+</script>
