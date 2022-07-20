@@ -1,0 +1,37 @@
+<script>
+    var mouri = {
+        myName: 'mou',
+        age: 28,
+        language: ['a', 'b', 'c'],
+        printLanguage: function () {
+
+            console.log(" in first", this);
+
+            let cust = () => {
+                console.log(" in 2nd in arrow", this);//shows its own this that it contains
+                console.log("language", this.language);
+            }
+            console.log(cust())
+
+            let cust2 = function () {
+                console.log(" in 3rd in normal", this);//show global this
+                console.log("language", this.language);//undefined as this is global here
+            }
+            console.log(cust2())
+
+            //now solve in normal function by assigning existing this to another variable
+
+            let self = this;
+            let cust3 = function () {
+                console.log("Solved", self);//show global this
+                console.log("language", self.language);//undefined as this is global here
+            }
+            console.log(cust3())
+
+
+
+        },
+
+    }
+    mouri.printLanguage();
+</script>

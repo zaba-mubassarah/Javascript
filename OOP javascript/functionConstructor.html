@@ -1,0 +1,51 @@
+<script>
+
+    const Computer = function () {
+        console.log("this inside a function when no new keyword is assigned : ", this); // in this case this simply refers the window object.
+        // But when we use it with new keyword it will behave differently.Let see in the nex example.
+    }
+    Computer();
+
+    const Car = function () {
+        console.log("this inside a function when new keyword is assigned : ", this);
+    }
+    const Audi = new Car(); //automatically calls and its an empty object which is refered by this 
+
+    //Now make properties to that empty object 
+    const Animal = function () {
+        this.origin = 'cat';
+        this.name = 'mini';
+        this.color = 'black';
+    }
+    const Cat = new Animal();
+    console.log(Cat);
+
+    //with parameters 
+    const Animal2 = function (origin, name, color) {
+        this.origin = origin;
+        this.name = name;
+        this.color = color;
+    }
+    const Dog = new Animal2("Dog", "Snow", "White");
+    console.log(Dog);
+
+    //can make function also and the this confusion.also we can see this confusion in modern js folder.
+    const Animal3 = function (origin, name, color) {
+        this.origin = origin;
+        this.name = name;
+        this.color = color;
+        this.about = function () {
+            console.log("this", this)//here this is always the existing this.not window this.
+            let self = this;
+            const anotherFunc = function () {
+                console.log("this inside function", this)//but this will refer window
+                console.log("this.origin", this.origin) //null 
+                console.log("self.origin", self.origin) //Dog 
+            }
+            anotherFunc();
+        }
+    }
+    const lion = new Animal3("Dog", "Snow", "White");
+    lion.about();
+
+</script>

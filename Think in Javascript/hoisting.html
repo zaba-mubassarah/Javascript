@@ -9,8 +9,8 @@
 
 	var LANGUAGE = 'Java';
 	var language = 'Javascript';
-	function getLanguage (){
-		if(!language){
+	function getLanguage() {
+		if (!language) {
 			var language = LANGUAGE;
 		}
 		return language;
@@ -23,15 +23,15 @@
 	//https://www.youtube.com/watch?v=pT9xqCS8Vwk&list=PLHiZ4m8vCp9Nflbo9a0pZuLscG_Xc7DKq&index=5	
 
 	myFunc();
-	function myFunc(){
+	function myFunc() {
 		console.log('iiiii');
 	}
 	//always function defination comes all above 
-    var y = 20;
-	function func2(){
+	var y = 20;
+	function func2() {
 		var x = 10;
-		return function(){
-				y =  x;
+		return function () {
+			y = x;
 		}
 	};
 	console.log(y);
@@ -39,9 +39,9 @@
 	console.dir(func2());
 
 
-	function bankAcc(param){
+	function bankAcc(param) {
 		var balance = param;
-		return function(){
+		return function () {
 			return balance;
 		}
 
@@ -50,14 +50,14 @@
 	console.dir(myRet);
 
 	function greeting() {
-    let message = 'Hi';
+		let message = 'Hi';
 
-    function sayHi() {
-        console.log(message);
-    }
+		function sayHi() {
+			console.log(message);
+		}
 
-    sayHi();
-}
+		sayHi();
+	}
 
-greeting();
+	greeting();
 </script>

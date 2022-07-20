@@ -1,0 +1,12 @@
+<script>
+    const myFunc = function () {
+        console.log(this);
+        let myArr = ["a", "b"];
+        var obj = { name: "shaa", age: 28 }
+        myArr.forEach(element => {
+            console.log(this);
+            console.log(obj.name);
+        });
+    }
+
+</script>
